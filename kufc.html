@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>KUFC - KAFANSKI ULTIMATE FIGHTING CHAMPIONSHIP</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Oswald', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/sport/1200x630/5');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .countdown-timer {
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid #dc2626;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            color: #dc2626;
+            font-weight: bold;
+        }
+        
+        .champion-card {
+            border: 3px solid #dc2626;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+        }
+        
+        .fighter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+        }
+        
+        .nav-link:hover {
+            color: #dc2626;
+        }
+        
+        .btn-red {
+            background-color: #dc2626;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-red:hover {
+            background-color: #b91c1c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black py-4 px-6 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+            <img src="https://uploads.onecompiler.io/44as62sqp/44as5xrhd/kufc.jpeg" width="50">
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-white hover:text-red-600">Home</a>
+                <a href="#" class="nav-link text-white hover:text-red-600">Fighters</a>
+                <a href="#" class="nav-link text-white hover:text-red-600">Weight Classes</a>
+                <a href="#" class="nav-link text-white hover:text-red-600">Upcoming Fights</a>
+                <a href="#" class="nav-link text-white hover:text-red-600">Rankings</a>
+                <a href="#" class="nav-link text-white hover:text-red-600">News</a>
+            </div>
+            <div class="md:hidden">
+                <i data-feather="menu" class="text-white"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[70vh] flex items-center justify-center text-center py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 font-['Bebas+Neue'] tracking-wide">KUFC – KAFANSKI ULTIMATE FIGHTING CHAMPIONSHIP</h1>
+            <p class="text-xl md:text-2xl mb-8">The world's best fighters. The world's toughest battles.</p>
+            <a href="#" class="btn-red text-white font-bold py-3 px-8 rounded-md inline-block">View Upcoming Fights</a>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-12 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="countdown-timer max-w-4xl mx-auto p-8 rounded-lg text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">Next KUFC Fight Starts In:</h2>
+                <h3 class="text-xl md:text-2xl text-red-600 font-bold mb-1">Mateja Frenc vs Viktor Stosic</h3>
+                <p class="text-gray-300 mb-6">Lightweight Championship • unknown – 8:30 PM EST</p>
+                
+                <div class="flex justify-center space-x-4 md:space-x-8" id="countdown">
+                    <div class="text-center">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="text-gray-300">Days</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="text-gray-300">Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="text-gray-300">Minutes</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="text-gray-300">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Fights Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center border-b border-gray-800 pb-4">UPCOMING FIGHTS</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Fight Card 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-red-600 transition-all">
+                    <img src="http://static.photos/sport/640x360/1" alt="Fighters" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Noa Matijasevic vs Nick</h3>
+                        <p class="text-red-600 mb-2">Welterweight Championship</p>
+                        <p class="text-gray-400">unknown • Belgrade</p>
+                    </div>
+                </div>
+                
+                <!-- Fight Card 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-red-600 transition-all">
+                    <img src="http://static.photos/sport/640x360/2" alt="Fighters" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mateja Frenc vs Viktor Stosic</h3>
+                        <p class="text-red-600 mb-2">Lightweight Championship</p>
+                        <p class="text-gray-400">unknown • Belgrade</p>
+                    </div>
+                </div>
+                
+                <!-- Fight Card 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-red-600 transition-all">
+                    <img src="http://static.photos/sport/640x360/3" alt="Fighters" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Marko Tasic vs Mateja Frenc</h3>
+                        <p class="text-red-600 mb-2">Middleweight Championship</p>
+                        <p class="text-gray-400">unknown • Belgrade</p>
+                    </div>
+                </div>
+                
+                <!-- Fight Card 4 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-red-600 transition-all">
+                    <img src="http://static.photos/sport/640x360/4" alt="Fighters" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2"></h3>
+                        <p class="text-red-600 mb-2">Middleweight Championship</p>
+                        <p class="text-gray-400">Mar 5, 2027 • New York, NY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weight Classes Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center border-b border-gray-800 pb-4">WEIGHT CLASSES</h2>
+                
+                <!-- Weight Class 4 -->
+                <div class="bg-black rounded-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Lightweight (52.5 kg)</h3>
+                    <ul class="space-y-2">
+                        <li>Mateja Frenc (Baba)</li>
+                        <li>Viktor Stosic</li>
+                        <li>Marko Tasic</li>
+                        <li>Ogi Mrsevic</li>
+                    </ul>
+                </div>
+                
+                <!-- Weight Class 7 -->
+                <div class="bg-black rounded-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Light Heavyweight (205 lbs)</h3>
+                    <ul class="space-y-2">
+                        <li>Marko Mihajlovic (Deda)</li>
+                        <li>Milan Todorovic</li>
+                        <li>Filip Buljevac</li>
+                        <li>Viktor Buljevac</li>
+                        <li>Stefan Petrovic</li>
+                    </ul>
+                </div>
+                
+                <!-- Weight Class 8 -->
+                <div class="bg-black rounded-lg p-6 border border-gray-800">
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Heavyweight (265 lbs)</h3>
+                    <ul class="space-y-2">
+                        <li>Noa Maksim Matijasevic (Sinko)</li>
+                        <li>Nemanja Vukasinovic</li>
+                        <li>MRKELA</li>
+                        <li>Luka Valeix</li>
+                        <li>Nick Novakovic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fighters Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center border-b border-gray-800 pb-4">TOP FIGHTERS</h2>
+            
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Fighter 1 -->
+                <div class="fighter-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800 transition-all duration-300">
+                    <img src="http://static.photos/people/320x240/1" alt="Conor McGregor" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Noa Maksim Matijasevic</h3>
+                        <p class="text-red-600 mb-1">"Sinko"</p>
+                        <p class="text-gray-400">Heavyweight</p>
+                        <p class="text-gray-300 mt-2">5-0-1</p>
+                    </div>
+                </div>
+                
+                <!-- Fighter 2 -->
+                <div class="fighter-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800 transition-all duration-300">
+                    <img src="http://static.photos/people/320x240/2" alt="Max Holloway" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Marko Tasic</h3>
+                        <p class="text-red-600 mb-1">"Blessed"</p>
+                        <p class="text-gray-400">Featherweight</p>
+                        <p class="text-gray-300 mt-2">25-7-0</p>
+                    </div>
+                </div>
+                
+                <!-- Fighter 3 -->
+                <div class="fighter-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800 transition-all duration-300">
+                    <img src="http://static.photos/people/320x240/3" alt="Kamaru Usman" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Kamaru Usman</h3>
+                        <p class="text-red-600 mb-1">"The Nigerian Nightmare"</p>
+                        <p class="text-gray-400">Welterweight</p>
+                        <p class="text-gray-300 mt-2">20-3-0</p>
+                    </div>
+                </div>
+                
+                <!-- Fighter 4 -->
+                <div class="fighter-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800 transition-all duration-300">
+                    <img src="http://static.photos/people/320x240/4" alt="Alex Pereira" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Alex Pereira</h3>
+                        <p class="text-red-600 mb-1">"Poatan"</p>
+                        <p class="text-gray-400">Light Heavyweight</p>
+                        <p class="text-gray-300 mt-2">9-2-0</p>
+                    </div>
+                </div>
+                
+                <!-- Fighter 5 -->
+                <div class="fighter-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800 transition-all duration-300">
+                    <img src="http://static.photos/people/320x240/5" alt="Dustin Poirier" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Dustin Poirier</h3>
+                        <p class="text-red-600 mb-1">"The Diamond"</p>
+                        <p class="text-gray-400">Lightweight</p>
+                        <p class="text-gray-300 mt-2">29-8-0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center border-b border-gray-800 pb-4">RANKINGS</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Division 1 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Lightweight</h3>
+                    <div class="space-y-2">
+                        <div class="champion-card bg-black p-4 rounded-lg">
+                            <p class="font-bold text-yellow-400">CHAMPION: Islam Makhachev</p>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg">1. Charles Oliveira</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">2. Justin Gaethje</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">3. Dustin Poirier</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">4. Beneil Dariush</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">5. Michael Chandler</div>
+                    </div>
+                </div>
+                
+                <!-- Division 2 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Welterweight</h3>
+                    <div class="space-y-2">
+                        <div class="champion-card bg-black p-4 rounded-lg">
+                            <p class="font-bold text-yellow-400">CHAMPION: Leon Edwards</p>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg">1. Colby Covington</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">2. Kamaru Usman</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">3. Belal Muhammad</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">4. Gilbert Burns</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">5. Shavkat Rakhmonov</div>
+                    </div>
+                </div>
+                
+                <!-- Division 3 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Middleweight</h3>
+                    <div class="space-y-2">
+                        <div class="champion-card bg-black p-4 rounded-lg">
+                            <p class="font-bold text-yellow-400">CHAMPION: Israel Adesanya</p>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg">1. Sean Strickland</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">2. Robert Whittaker</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">3. Jared Cannonier</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">4. Marvin Vettori</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">5. Paulo Costa</div>
+                    </div>
+                </div>
+                
+                <!-- Division 4 -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-red-600">Heavyweight</h3>
+                    <div class="space-y-2">
+                        <div class="champion-card bg-black p-4 rounded-lg">
+                            <p class="font-bold text-yellow-400">CHAMPION: Jon Jones</p>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded-lg">1. Stipe Miocic</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">2. Cyril Gane</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">3. Sergei Pavlovich</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">4. Tom Aspinall</div>
+                        <div class="bg-gray-800 p-3 rounded-lg">5. Curtis Blaydes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center border-b border-gray-800 pb-4">LATEST NEWS</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News 1 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                    <img src="http://static.photos/sport/640x360/6" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">KUFC Announces Massive Welterweight Title Fight</h3>
+                        <p class="text-gray-400">Leon Edwards will defend his title against Colby Covington in the main event of KUFC 296...</p>
+                        <a href="#" class="text-red-600 inline-block mt-4 font-bold">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                    <img src="http://static.photos/sport/640x360/7" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Lightweight Division Reaches Boiling Point</h3>
+                        <p class="text-gray-400">With multiple contenders vying for a shot at the title, the lightweight division has never been more competitive...</p>
+                        <a href="#" class="text-red-600 inline-block mt-4 font-bold">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                    <img src="http://static.photos/sport/640x360/8" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Jon Jones vs Stipe Miocic Set for Heavyweight Clash</h3>
+                        <p class="text-gray-400">Two of the greatest heavyweights of all time will collide in what promises to be an epic showdown...</p>
+                        <a href="#" class="text-red-600 inline-block mt-4 font-bold">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold text-red-600 mb-4">KUFC</h2>
+                    <p class="text-gray-400">© 2026 KUFC. All rights reserved.</p>
+                    <p class="text-gray-500 text-sm mt-2">KUFC is a fictional MMA brand inspired by professional combat sports.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-red-600"><i data-feather="facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600"><i data-feather="twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600"><i data-feather="instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-red-600"><i data-feather="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const fightDate = new Date("December 15, 2026 22:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = fightDate - now;
+            
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = '<div class="text-3xl font-bold text-red-600">LIVE NOW</div>';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile menu toggle
+        document.querySelector('[data-feather="menu"]').addEventListener('click', function() {
+            const nav = document.querySelector('.hidden.md\\:flex');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-black');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('space-y-4');
+            nav.classList.toggle('space-x-8');
+        });
+    </script>
+</body>
+</html>
